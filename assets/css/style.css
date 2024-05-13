@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-image: url(../img/Background\ img.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    color: #ffffff;
+    grid-template-columns: 25% auto;
+    gap: 20px;
+    grid-template-areas:
+      "navegacion header"
+      "navegacion productos"
+      "footer footer";
+  }
+  .navegacion {
+    grid-area: navegacion;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 1em;
+    background-color: #333;
+    color: rgb(170, 96, 255);
+    box-shadow: 4px 4px 15px rgba(170, 96, 255, 0.443);
+    & li {
+      list-style: none;
+    }
+  }
+  .logo{
+    text-align: center;
+    display: flex;
+    align-items: center;
+      padding-left: .5rem;
+  }
+  .hambur-links  ul{
+    display: none;
+    i{
+      height: 2rem;
+    }
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: #333;
+    text-align: center;
+    padding: 0.3em;
+  padding-bottom: 2rem;
+  box-shadow: 4px 4px 15px rgba(170, 96, 255, 0.443);
+  color: rgb(170, 96, 255);
+  
+    & select {
+      padding: 0.3em;
+      border-radius: 4px;
+      width: 80vw;
+    }
+  }
+  .productos{
+    grid-area: productos;
+    margin-top: 2rem;
+  }
+  .productos-seccion {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    row-gap: 3rem;
+   
+  }
+  .paginacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: .5rem;
+    color:  rgb(85, 12, 169);
+    & div{
+      padding: .5rem;
+      border: 1px solid rgb(85, 12, 169);
+      background-color: aliceblue;
+    }
+    
+      div:nth-child(1){
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+      div:nth-child(5){
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+  }
+  
+  .card {
+    width: 100%;
+    height: 250px;
+    background-color: #333;
+    color: rgba(170, 96, 255);
+    text-align: center;
+    border-radius: 10px;
+    align-items: center;
+    align-content: baseline;
+    box-sizing: border-box;
+    margin: 10px;
+    box-shadow: 4px 4px 15px rgba(85, 12, 169, 0.443);
+    div > img{
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 150px;
+    }
+
+    .descripcion-card{
+      text-align: center;
+      box-sizing: content-box;
+      & button{
+        background-color: rgba(85, 12, 169, 0.443);
+        color: rgb(170, 96, 255);
+        font-weight: 400;
+        padding: .3rem 2rem;
+        border: none;
+        border-radius: 20px;
+  
+      }
+    }
+
+  }
+
+  .card p{
+    padding: 10px;
+  }
+
+  .footer{
+    grid-area: footer;
+    text-align: center;
+    background-color: #333;
+    padding: 1.5rem ;
+    color: rgb(170, 96, 255);
+    box-sizing: content-box;
+    .redes{
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 20px;
+  
+      i {
+        font-size: 3rem;
+        border-radius: 5px;
+        padding-bottom: .5rem;
+      }
+    }
+  }
+  @media (min-width:577px) and (max-width: 992px){
+    body {
+      display: grid;
+      grid-template-columns: 25% auto;
+      grid-template-areas:
+        'navegacion navegacion'
+        'header productos'
+        'footer footer';
+        gap: 0px;
+    }
+    .hamburguesa {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      i{
+        display: none;
+      }
+      .hambu-links {
+        display: flex;
+        & ul{ 
+          display: flex;
+          gap: 1rem;
+          align-content: flex-end;
+          flex-wrap: nowrap;
+          flex-direction: row;
+          justify-content: center;
+        }
+        
+      }
+    }
+  
+    .header{
+      border-top: 2px dotted rgb(197, 84, 254);
+      padding-top: 1rem;
+    }
+    .header select {
+      width: 20vw;
+      margin-top: .5rem;
+    
+    }
+    .productos-seccion {
+      grid-template-columns: 1fr 1fr;
+     
+    }
+    .paginacion{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding-bottom: 1.5rem;
+      & div{
+        padding: .5rem;
+    
+      }
+      div:nth-child(1){
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+      div:nth-child(5n){
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+    .footer{
+      height: 12vh;
+      background-color:  rgb(227, 207, 237);
+    }
+    
+  }
+  @media (min-width: 993px) and (max-width: 1261px){
+    body {
+      display: grid;
+      grid-template-columns: 20% auto;
+      grid-template-areas:
+        'navegacion header'
+        'navegacion productos'
+        'footer productos ';
+        gap: 0px;
+        height: 100vh;
+    }
+    .hambu-links  ul{
+      display: block;
+      i{
+        height: 2rem;
+      }
+    }
+    .navegacion{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      .logo{
+        padding: 1rem;
+      }
+      li{
+        padding: .6rem;
+      }
+    }
+    .hamburguesa i{
+      display: none;
+    }
+    .header select {
+      width: 75vw;
+      margin-top: .5rem;
+      box-sizing: border-box;
+    
+    }
+    .productos-seccion {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+     
+    }
+    .paginacion{
+      & div{
+        padding: .5rem;
+      }
+      
+        div:nth-child(1){
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+        }
+        div:nth-child(5n){
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+    }
+    .footer{
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     .redes > div > i{
+      font-size: x-large;
+     }
+    }
+    
+  }
+  @media (min-width: 1262px) {
+  
+   .productos-seccion {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+     
+    }
+    .hamburguesa i{
+      display: none;
+    }
+    .hambu-links  ul{
+      display: flex;
+      gap: 20px;
+      i{
+        height: 2rem;
+      }
+    }
+   
+  }
+  
